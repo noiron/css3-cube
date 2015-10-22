@@ -1,0 +1,71 @@
+body {
+    margin-top: 150px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg)
+    }
+}
+
+#container {
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+}
+
+#cube {
+    position: relative;
+    margin: 0 auto;
+    height: 400px;
+    width: 400px;
+
+    transform-style: preserve-3d;
+    animation: spin 5s infinite linear;
+
+}
+
+#cube>div {
+    position: absolute;
+    height: 360px;
+    width: 360px;
+    padding: 20px;
+
+    opacity: 0.9;
+
+    text-align: center;
+    font-size: 80px;
+    line-height: 320px;
+}
+
+div#front {
+    background-color: greenyellow;
+    transform: translateZ(200px);
+}
+
+div#back {
+    background-color: orangered;
+    transform: translateZ(-200px) rotateY(180deg);
+}
+
+div#left {
+    background-color: orange;
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+div#right {
+    background-color: deepskyblue;
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+div#top {
+    background-color: gray;
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+div#bottom {
+    background-color: tomato;
+    transform: rotateX(-90deg) translateZ(200px);
+}
